@@ -1,43 +1,112 @@
-import {StyleSheet} from 'react-native';
-
-import {Theme} from '../../utils/types';
-
-export const createTagsStyles = (theme: Theme) => ({
-  body: {
-    color: theme.colors.text,
-    fontSize: 16,
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-    padding: 0,
-    paddingTop: 0,
-    margin: 0,
-    backgroundColor: 'transparent',
-    // display: 'inline-block',
-  },
-  code: {
-    fontFamily: 'Courier', // Change the font for code snippets
-    backgroundColor: theme.colors.surface, // Custom background for code blocks
-    padding: 4,
-    borderRadius: 4,
-    color: theme.colors.onSurface, // Color for code text
-    fontSize: 12,
-  },
-  pre: {
-    backgroundColor: theme.colors.surface, // Background for pre blocks
-    padding: 8,
-    borderRadius: 6,
-    color: theme.colors.onPrimaryContainer,
-    fontFamily: 'Courier',
-    fontSize: 14,
-    // overflow: 'scroll', // Ensure scrolling for long code blocks
-  },
-});
+import { StyleSheet } from 'react-native';
+import { Theme } from '../../utils/types';
 
 export const createStyles = (theme: Theme) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
+    // Base text styles
+    body: {
+      color: theme.colors.text,
+      fontSize: 16,
+      lineHeight: 24,
+      fontFamily: 'system-font',
+      padding: 0,
+      margin: 0,
+      backgroundColor: 'transparent',
     },
+    strong: {
+      fontWeight: 'bold',
+      margin: 0,
+      padding: 0,
+      textAlign: 'left',
+    },
+    b: {
+      fontWeight: 'bold',
+      margin: 0,
+      padding: 0,
+      textAlign: 'left',
+    },
+    em: {
+      fontStyle: 'italic',
+      margin: 0,
+      padding: 0,
+    },
+    i: {
+      fontStyle: 'italic',
+      margin: 0,
+      padding: 0,
+    },
+    p: {
+      margin: 0,
+      padding: 0,
+    },
+
+    // Code-related styles
+    code: {
+      fontFamily: 'Courier',
+      backgroundColor: theme.colors.surface,
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      lineHeight: 20,
+      padding: 2,
+    },
+    pre: {
+      backgroundColor: 'transparent',
+      padding: 0,
+      margin: 0,
+    },
+    preContainer: {
+      backgroundColor: theme.colors.surface,
+      borderRadius: 8,
+      marginVertical: 12,
+      overflow: 'hidden',
+    },
+    codeHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 8,
+      backgroundColor: theme.colors.primaryContainer,
+      borderBottomWidth: 1,
+      borderBottomColor: theme.colors.outline,
+    },
+    codeContent: {
+      padding: 12,
+    },
+    languageLabel: {
+      color: theme.colors.onSurfaceVariant,
+      fontSize: 15,
+      fontWeight: 'bold',
+    },
+    copyButton: {
+      flexDirection: 'row', // Align icon and text horizontally
+      alignItems: 'center', // Center items vertically
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      borderRadius: 4,
+      backgroundColor: theme.colors.primaryContainer,
+    },
+    copyButtonText: {
+      color: theme.colors.onPrimaryContainer,
+      fontSize: 15,
+      marginLeft: 8, // Add some margin to separate the icon and text
+    },
+    codeBlock: {
+      fontFamily: 'Courier',
+      fontSize: 14,
+      lineHeight: 20,
+      color: theme.colors.onSurface,
+    },
+    inlineCode: {
+      fontFamily: 'Courier',
+      backgroundColor: theme.colors.surface,
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      paddingHorizontal: 4,
+      paddingVertical: 2,
+      borderRadius: 4,
+    },
+
+    // Custom <think> block styles
     thinkContainer: {
       backgroundColor: theme.colors.surfaceContainerHigh,
       borderRadius: 8,
